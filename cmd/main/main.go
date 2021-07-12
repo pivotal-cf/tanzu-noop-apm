@@ -18,14 +18,14 @@ package main
 
 import (
 	"os"
-	"github.com/pivotal-cf/tanzu-noop-apm"
+	"github.com/pivotal-cf/tanzu-noop-apm/tanzu-noop-apm"
 	"github.com/paketo-buildpacks/libpak"
 	"github.com/paketo-buildpacks/libpak/bard"
 )
 
 func main() {
 	libpak.Main(
-		tanzu-noop-apm.Detect{},
-		tanzu-noop-apm.Build{Logger: bard.NewLogger(os.Stdout)},
+		tanzu_noop_apm.Detect{},
+		tanzu_noop_apm.Build{Logger: bard.NewLogger(os.Stdout)},
 	)
 }

@@ -40,7 +40,7 @@ id      = "sample-agent"
 name    = "Sample Agent - Installs a fake agent Jar"
 version = "1.0.0"
 uri     = "https://github.com/pivotal-david-osullivan/sample-agent/releases/download/1.0.0/sample-agent.tar.xz"
-sha256  = "977bd62ab52868414fa6a0637e062ac3073de28d4ec5fd7ef26dd404ab140e0a"
+sha256  = "f7b81db08737090d16ad5b2b5dd90bd1c219f13ff2f8bd22d9eb03e3ec7b0772"
 stacks  = [ "io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "org.cloudfoundry.stacks.cflinuxfs3" ]
 
   [[metadata.dependencies.licenses]]

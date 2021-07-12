@@ -58,12 +58,12 @@ func (w tanzuNoopApm) Contribute(layer libcnb.Layer) (libcnb.Layer, error) {
 			return libcnb.Layer{}, fmt.Errorf("unable to mkdir\n%w", err)
 		}
 		// Create a symlink from bin/sample-agent.jar to where we un-zipped the agent
-		if err := os.Symlink(filepath.Join(layer.Path, "sample-agent"), filepath.Join(binDir, "sample-agent")); err != nil {
+		if err := os.Symlink(filepath.Join(layer.Path, "sampleagent.jar"), filepath.Join(binDir, "sampleagent.jar")); err != nil {
 			return libcnb.Layer{}, fmt.Errorf("unable to symlink sample-agent\n%w", err)
 		}
 		// Finally add the agent to the JAVA_TOOL_OPTIONS env var via '-javaagent' flag - this points to the agent path
 		layer.LaunchEnvironment.Appendf("JAVA_TOOL_OPTIONS", " ",
-			"-javaagent:%s", filepath.Join(layer.Path, "agent", "sampleagent.jar"))
+			"-javaagent:%s", filepath.Join(layer.Path, "sampleagent.jar"))
 
 		return layer, nil
 	})
