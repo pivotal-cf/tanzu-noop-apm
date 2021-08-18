@@ -29,7 +29,7 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 				},
 			},
 		}
-		ctx.StackID = "test-stack-id"
+		ctx.StackID = "io.buildpacks.stacks.bionic"
 
 		result, err := tanzu_noop_apm.Build{}.Build(ctx)
 		Expect(err).NotTo(HaveOccurred())

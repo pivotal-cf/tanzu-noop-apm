@@ -40,16 +40,12 @@ func testJavaAgent(t *testing.T, context spec.G, it spec.S) {
 	it("contributes Java agent", func() {
 
 		dep := libpak.BuildpackDependency{
-			ID:     "sample-agent",
-			URI:    "https://localhost/stub-sample-agent.zip",
-			SHA256: "fae6690187c2ea9473bce63d8618040567c7273625d4e0486de2326fae7ba946",
+			URI:    "http://localhost:8080/stub-sampleagent.tar.xz",
+			SHA256: "9882935290fa44a8ab130390ad7d52f753a8f7a025c73606c0ad20364fe43f13",
 		}
 		dc := libpak.DependencyCache{CachePath: "testdata"}
 
 		j, bomEntry := tanzu_noop_apm.NewTanzuNoopApm(dep, dc)
-		Expect(bomEntry).To(HaveLen(1))
-		Expect(bomEntry.Name).To(Equal("sample-agent"))
-		Expect(bomEntry.Metadata["layer"]).To(Equal("sample-agent"))
 		Expect(bomEntry.Launch).To(BeTrue())
 		Expect(bomEntry.Build).To(BeFalse())
 
