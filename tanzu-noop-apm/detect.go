@@ -41,6 +41,7 @@ func (d Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error
 				// itself since it provides a standalone agent
 				Requires: []libcnb.BuildPlanRequire{
 					{Name: PlanEntrySample},
+					{Name: "jvm-application"},
 				},
 			},
 		},

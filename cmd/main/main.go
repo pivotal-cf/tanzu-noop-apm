@@ -18,7 +18,9 @@ package main
 
 import (
 	"os"
-	"github.com/pivotal-cf/tanzu-noop-apm/tanzu-noop-apm"
+
+	tanzu_noop_apm "github.com/pivotal-cf/tanzu-noop-apm/tanzu-noop-apm"
+
 	"github.com/paketo-buildpacks/libpak"
 	"github.com/paketo-buildpacks/libpak/bard"
 )
